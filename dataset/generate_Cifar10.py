@@ -6,7 +6,7 @@ import torch
 import torchvision
 import torchvision.transforms as transforms
 from utils.dataset_utils import check, separate_data, split_data, save_file
-
+import matplotlib.pyplot as plt
 
 random.seed(1)
 np.random.seed(1)
@@ -69,7 +69,25 @@ def generate_dataset(dir_path, num_clients, niid, balance, partition):
     save_file(config_path, train_path, test_path, train_data, test_data, num_clients, num_classes, 
         statistic, niid, balance, partition)
 
-
+    # Visualize the train data distribution of each client and save the figure
+    rows = (num_clients + 3) // 4
+    fig, axes = plt.subplots(rows, 4, figsize=(4 * 4, 3 * rows))
+    axes = axes.flatten()
+    for i, client in enumerate(train_data):
+        y_train = client['y']
+        counts = [np.sum(y_train == c) for c in range(num_classes)]
+        axes[i].bar(range(num_classes), counts)
+        axes[i].set_title(f'Client {i}')
+        axes[i].set_xlabel('Class')
+        axes[i].set_ylabel('Samples')
+    # Remove unused subplots
+    for j in range(len(train_data), len(axes)):
+        fig.delaxes(axes[j])
+    plt.tight_layout()
+    os.makedirs(os.path.join(dir_path, 'figures'), exist_ok=True)
+    fig.savefig(os.path.join(dir_path, 'figures', 'client_data_distribution.png'))
+    plt.close(fig)
+    
 if __name__ == "__main__":
     niid = True if sys.argv[1] == "noniid" else False
     balance = True if sys.argv[2] == "balance" else False
