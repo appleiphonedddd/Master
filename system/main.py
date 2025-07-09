@@ -8,6 +8,7 @@ import warnings
 import numpy as np
 import torchvision
 import logging
+import pandas as pd
 
 from flcore.servers.serveravg import FedAvg
 from flcore.servers.serverpFedMe import pFedMe
@@ -377,6 +378,14 @@ def run(args):
 
         server.train()
 
+        if hasattr(server, 'rs_test_acc') and len(server.rs_test_acc) > 0:
+            df = pd.DataFrame({
+                'round': list(range(len(server.rs_test_acc))),
+                'test_acc': server.rs_test_acc,
+            })
+            csv_name = f"{args.algorithm}_run{i}_rs_test_acc.csv"
+            df.to_csv(csv_name, index=False)
+            print(f"[Info] Saved per-round test accuracy for {args.algorithm} run {i} to {csv_name}")
         time_list.append(time.time()-start)
 
     print(f"\nAverage time cost: {round(np.average(time_list), 2)}s.")
