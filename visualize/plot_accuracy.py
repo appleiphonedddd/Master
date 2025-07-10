@@ -21,19 +21,18 @@ def main():
             print(f"[Warning] File not found: {csv_path}")
             continue
         df = pd.read_csv(csv_path)
-        label = os.path.basename(csv_path)
+        label = os.path.splitext(os.path.basename(csv_path))[0]
         color = colors[idx % len(colors)]
-        plt.plot(df['round'], df['test_acc'], marker='o', label=label, color=color)
+        plt.plot(df['round'], df['test_acc'],label=label, color=color)
 
     plt.xlabel('Communication Round')
-    plt.ylabel('Test Accuracy')
-    plt.title('Test Accuracy per Round Comparison')
+    plt.ylabel('Accuracy')
     plt.legend()
     plt.grid(True)
     plt.tight_layout()
 
     # Save figure
-    png_path = 'accuracy_comparison.png'
+    png_path = 'Result.png'
     plt.savefig(png_path)
     print(f"[Info] Saved comparison plot to {png_path}")
 
