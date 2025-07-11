@@ -68,7 +68,7 @@ def generate_dataset(dir_path, num_clients, niid, balance, partition):
     train_data, test_data = split_data(X, y)
     save_file(config_path, train_path, test_path, train_data, test_data, num_clients, num_classes, 
         statistic, niid, balance, partition)
-    
+
     # Visualize the train & test data distribution of each client and save the figure
     rows = (num_clients + 3) // 4
     fig, axes = plt.subplots(rows, 4, figsize=(4 * 4, 3 * rows))
@@ -99,6 +99,7 @@ def generate_dataset(dir_path, num_clients, niid, balance, partition):
     os.makedirs(os.path.join(dir_path, 'figures'), exist_ok=True)
     fig.savefig(os.path.join(dir_path, 'figures', 'client_data_distribution.png'))
     plt.close(fig)
+
 
 if __name__ == "__main__":
     niid = True if sys.argv[1] == "noniid" else False

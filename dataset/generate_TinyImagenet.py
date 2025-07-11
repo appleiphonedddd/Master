@@ -132,6 +132,7 @@ def generate_dataset(dir_path, num_clients, niid, balance, partition):
     fig.savefig(os.path.join(dir_path, 'figures', 'client_data_distribution.png'))
     plt.close(fig)
 
+
 if __name__ == "__main__":
     niid = True if sys.argv[1] == "noniid" else False
     balance = True if sys.argv[2] == "balance" else False
