@@ -4,12 +4,15 @@
 
 ## Contents
 
-- [Getting Started](#Getting-Started)
-  - [Requirements](#Requirements)
-  - [Installation](#Installation)
-- [Deployment](#Deployment)
-- [Frameworks Used](#Frameworks-Used)
-- [Author](#Author)
+- [Master thesis](#master-thesis)
+  - [Contents](#contents)
+    - [Getting Started](#getting-started)
+          - [Requirements](#requirements)
+          - [Installation](#installation)
+    - [Deployment](#deployment)
+    - [Extend new algorithms and datasets](#extend-new-algorithms-and-datasets)
+    - [Frameworks Used](#frameworks-used)
+    - [Author](#author)
 
 ### Getting Started
 
@@ -62,8 +65,15 @@ python generate_FashionMNIST.py noniid - dir # for practical noniid and unbalanc
 
 ```sh
 cd ./system
-python main.py -data FashionMNIST -m CNN -algo FedAvg -gr 2000 -did 0 # using the FashionMNIST dataset, the FedAvg algorithm, and the 4-layer CNN model
-python main.py -data FashionMNIST -m CNN -algo FedAvg -gr 2000 -did 0,1,2,3 # running on multiple GPUs
+python main.py -data FashionMNIST -m CNN -algo FedAvg -gr 100 -did 0 # using the FashionMNIST dataset, the FedAvg algorithm, and the 4-layer CNN model, communication round 100
+
+python main.py -data Cifar10 -m CNN -algo FedAvg -gr 100 -did 0
+
+python main.py -data Cifar100 -ncl 100 -m CNN -algo FedAvg -gr 100 -did 
+
+python main.py -data TinyImagenet -ncl 200 -m CNN -algo FedAvg -gr 100 -did 0
+
+python main.py -data FashionMNIST -m CNN -algo FedAvg -gr 100 -did 0,1,2,3 # running on multiple GPUs
 ```
 
 ### Extend new algorithms and datasets
