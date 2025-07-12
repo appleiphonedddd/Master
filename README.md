@@ -133,8 +133,7 @@ python main.py -data FashionMNIST -m CNN -algo FedAvg -gr 100 -did 0,1,2,3 # run
 
 ### Frameworks Used
 
-- [Computer Vision: Algorithms and Applications, 2nd ed](https://szeliski.org/Book/)
-
+- [PyTorch](https://pytorch.org/)
 
 ### Author
 
