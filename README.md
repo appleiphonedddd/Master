@@ -1,10 +1,10 @@
-# Master thesis
+# <img src="docs/imgs/logo-green.png" alt="icon" height="24" style="vertical-align:sub;"/> PFL Framework for Non-IID Data: Balancing Global and Local Adaptation
 
-`thesis` project belongs to the Advanced Computer Vision at National Dong Hwa University. The purpose of this project is to know about Computer Vision Algorithms and Applications in CS, including famous algorithms for images processing, deeper learning, tracking people in video, OCR and etc.
+We propose
 
 ## Contents
 
-- [Master thesis](#master-thesis)
+- [ PFL Framework for Non-IID Data: Balancing Global and Local Adaptation](#-pfl-framework-for-non-iid-data-balancing-global-and-local-adaptation)
   - [Contents](#contents)
     - [Getting Started](#getting-started)
           - [Requirements](#requirements)
