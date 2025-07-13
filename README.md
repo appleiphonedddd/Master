@@ -1,10 +1,10 @@
-# <img src="docs/imgs/logo-green.png" alt="icon" height="24" style="vertical-align:sub;"/> PFL Framework for Non-IID Data: Balancing Global and Local Adaptation
+# <img src="docs/imgs/logo-green.png" alt="icon" height="24" style="vertical-align:sub;"/> Personalized Federated Learning on Non-IID Data via Global-Local Optimization
 
 We propose
 
 ## Contents
 
-- [ PFL Framework for Non-IID Data: Balancing Global and Local Adaptation](#-pfl-framework-for-non-iid-data-balancing-global-and-local-adaptation)
+- [ Personalized Federated Learning on Non-IID Data via Global-Local Optimization](#-personalized-federated-learning-on-non-iid-data-via-global-local-optimization)
   - [Contents](#contents)
     - [Getting Started](#getting-started)
           - [Requirements](#requirements)
@@ -69,7 +69,7 @@ python main.py -data FashionMNIST -m CNN -algo FedAvg -gr 100 -did 0 # using the
 
 python main.py -data Cifar10 -m CNN -algo FedAvg -gr 100 -did 0
 
-python main.py -data Cifar100 -ncl 100 -m CNN -algo FedAvg -gr 100 -did 
+python main.py -data Cifar100 -ncl 100 -m CNN -algo FedAvg -gr 100 -did 0
 
 python main.py -data TinyImagenet -ncl 200 -m CNN -algo FedAvg -gr 100 -did 0
 
