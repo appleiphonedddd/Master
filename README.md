@@ -76,6 +76,12 @@ python main.py -data TinyImagenet -ncl 200 -m CNN -algo FedAvg -gr 100 -did 0
 python main.py -data FashionMNIST -m CNN -algo FedAvg -gr 100 -did 0,1,2,3 # running on multiple GPUs
 ```
 
+4. Accuracy visualization
+
+```sh
+python plot_accuracy.py path_to_csv  path_to_csv
+```
+
 ### Extend new algorithms and datasets
 
 - **New Dataset**: To add a new dataset, simply create a `generate_DATA.py` file in `./dataset` and then write the download code and use the [utils](https://github.com/TsingZ0/PFLlib/tree/master/dataset/utils) as shown in `./dataset/generate_MNIST.py` (you can consider it as a template):
