@@ -18,7 +18,7 @@ We propose
 
 ###### Requirements
 
-1. Ubuntu 24.04.02 LTS
+Ubuntu 24.04.02 LTS
 
 ###### Installation
 
