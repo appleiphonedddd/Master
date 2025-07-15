@@ -25,7 +25,7 @@ Ubuntu 24.04.02 LTS
 1. Install Conda (If you have already installed this command or Anaconda , you can skip this step!!!!)
 
 ```sh
-./Install_miniconda.sh
+./install_miniconda.sh
 ```
 
 ### Deployment
