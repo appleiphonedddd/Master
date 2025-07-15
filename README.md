@@ -22,16 +22,9 @@ Ubuntu 24.04.02 LTS
 
 ###### Installation
 
-1. Upgrade package
+1. Install Conda (If you have already installed this command or Anaconda , you can skip this step!!!!)
 
 ```sh
-sudo apt-get update
-```
-
-2. Install Conda (If you have already installed this command or Anaconda , you can skip this step!!!!)
-
-```sh
-chmod 777 Install_miniconda.sh
 ./Install_miniconda.sh
 ```
 
@@ -65,7 +58,7 @@ python generate_FashionMNIST.py noniid - dir # for practical noniid and unbalanc
 
 ```sh
 cd ./system
-python main.py -data FashionMNIST -m CNN -algo FedAvg -gr 100 -did 0 # using the FashionMNIST dataset, the FedAvg algorithm, and the 4-layer CNN model, communication round 100
+python main.py -data FashionMNIST -m CNN -algo FedAvg -gr 100 -did 0 # using the FashionMNIST dataset, the FedAvg algorithm, and the 4-layer CNN model, communication round 100 and single GPU
 
 python main.py -data Cifar10 -m CNN -algo FedAvg -gr 100 -did 0
 
